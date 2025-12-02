@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     && rm -rf /var/lib/apt/lists/*
-
+RUN groupadd -f docker && \
+    usermod -aG docker jenkins
 ## Copying all contents from local to container
 COPY . .
 
