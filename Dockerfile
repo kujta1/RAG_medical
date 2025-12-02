@@ -14,8 +14,6 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     && rm -rf /var/lib/apt/lists/*
-RUN groupadd -f docker && \
-    usermod -aG docker jenkins
 ## Copying all contents from local to container
 COPY . .
 
@@ -24,6 +22,7 @@ RUN pip install --no-cache-dir -e .
 
 ## Expose only flask port
 EXPOSE 5001
+#changes
 
 ## Run the Flask app
 CMD ["python", "app/application.py"]
