@@ -19,7 +19,7 @@ COPY . .
 
 ## Install Python dependencies
 RUN pip install --no-cache-dir -e .
-RUN groupadd -f docker && usermod -aG docker jenkins
+#RUN groupadd -f docker && usermod -aG docker jenkins
 ## Expose only flask port
 EXPOSE 5001
 #changes
