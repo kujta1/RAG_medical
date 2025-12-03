@@ -27,8 +27,9 @@ pipeline {
                         def imageFullTag = "${ecrUrl}:${IMAGE_TAG}"
 
                         sh """
+
                         aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ecrUrl}
-                        docker build -t ${env.ECR_REPO}:${IMAGE_TAG} .
+                        sudo docker build -t ${env.ECR_REPO}:${IMAGE_TAG} .
                         trivy image --severity HIGH,CRITICAL --format json -o trivy-report.json ${env.ECR_REPO}:${IMAGE_TAG} || true
                         docker tag ${env.ECR_REPO}:${IMAGE_TAG} ${imageFullTag}
                         docker push ${imageFullTag}
