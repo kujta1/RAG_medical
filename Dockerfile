@@ -21,6 +21,7 @@ COPY . .
 RUN pip install --no-cache-dir -e .
 #RUN groupadd -f docker && usermod -aG docker jenkins
 ## Expose only flask port
+RUN python components/data_loader.py   
 EXPOSE 5001
 #changes
 
