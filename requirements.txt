@@ -1,9 +1,13 @@
 langchain
+langchain_classic
 langchain_community
-langchain-classic
 langchain_huggingface
+langchain_text_splitters
 faiss-cpu
 pypdf
 huggingface_hub
 flask
 python-dotenv
+sentence-splitter
+langchain-classic
+sentence-transformers

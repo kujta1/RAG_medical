@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request,session,redirect,url_for
 from app.components.retriever import create_qa_chain
 from dotenv import load_dotenv
+from app.components.data_loader import process_and_store_pdfs
 import os
 
 load_dotenv()
@@ -49,6 +50,7 @@ def clear():
     return redirect(url_for("index"))
 
 if __name__=="__main__":
+    process_and_store_pdfs()
     app.run(host="0.0.0.0" , port=5001 , debug=False , use_reloader = False)
 
 
