@@ -1,5 +1,6 @@
 langchain
 langchain_community
+langchain-classic
 langchain_huggingface
 faiss-cpu
 pypdf

@@ -1,4 +1,4 @@
-from langchain.chains import RetrievalQA
+from langchain_classic.chains import RetrievalQA
 from langchain_core.prompts import PromptTemplate
 
 from app.components.llm import load_llm
